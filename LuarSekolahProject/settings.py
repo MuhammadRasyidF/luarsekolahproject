@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'users',
     'courses',
+    'purchased_courses',
 ]
 
 REST_FRAMEWORK = {
@@ -65,7 +66,7 @@ SIMPLE_JWT = {
 }
 
 # Konfigurasi MinIO
-MINIO_ENDPOINT = 'http://172.23.96.1:53260'
+MINIO_ENDPOINT = 'localhost:9000'
 MINIO_ACCESS_KEY = 'ITRULv9pT0xr2WMkK2lG'
 MINIO_SECRET_KEY = '9wZTro5o8NgnJUV42rhO2rsjbRJcJDvlsE7QD3Cv'
 MINIO_BUCKET_NAME = 'coursesimg'

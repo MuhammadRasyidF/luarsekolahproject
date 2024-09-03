@@ -31,8 +31,9 @@ def create_course(request):
     except S3Error as e:
         return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    file_url = f'{settings.MINIO_ENDPOINT}/{bucket_name}/{file_key}'
+    file_url = f'http://{settings.MINIO_ENDPOINT}/{bucket_name}/{file_key}'
 
+    print(file_url)
     serializer = CoursesSerializer(data={
         'title': request.data.get('title'),
         'instructor': request.data.get('instructor'),
